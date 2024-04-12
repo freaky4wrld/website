@@ -73,7 +73,7 @@ async function removeInactiveMembers(previousContributors, inactiveWithOpenIssue
       // Prior to deletion, confirm that member is on the baseTeam
       await addTeamMember(github, context, baseTeam, username);
       // But if member has an open issue or was not on the previouslyNotified list, do not remove yet
-      if(username in inactiveWithOpenIssue && inactiveWithOpenIssue[username][1] === false){
+      if(username in inactiveWithOpenIssue && inactiveWithOpenIssue[username] && inactiveWithOpenIssue[username][1] === false){
         cannotRemoveYet[username] = inactiveWithOpenIssue[username][0];
       } else if((previouslyNotified.length > 0) && !(previouslyNotified.includes(username))){
         console.log('Member was not on last month\'s \'Inactive Members\' list, do not remove: ' + username);
