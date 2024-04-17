@@ -17,8 +17,8 @@ async function main({ g, c }) {
   let inactiveLists = JSON.parse(rawData);
   const inactiveWithOpen = parseInactiveOpen(inactiveLists['cannotRemoveYet']);
   
-  const owner = context.repo.owner;
-  const repo = context.repo.repo;
+  const owner = 'freaky4wrld';
+  const repo = 'website';
   const agendaIssueNum = 7;            // Issue number of the Dev/PM meeting agenda on Mondays
 
   // Create a new issue in repo, return the issue id for later: creating the project card linked to this issue
